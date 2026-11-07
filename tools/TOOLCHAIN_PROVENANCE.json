@@ -1,0 +1,67 @@
+{
+  "recorded_date": "2026-11-08",
+  "purpose": "Build a separate standalone Android app and statically inspect the supplied APK; no vendor code is executed by the analysis workflow.",
+  "build_configuration": {
+    "compile_sdk": 36,
+    "min_sdk": 26,
+    "target_sdk": 35,
+    "java_source_and_bytecode": 8,
+    "build_system": "aapt2, JDK compiler module, jar module, D8, zipalign, apksigner; no Gradle",
+    "signing": "Project-local development certificate; unrelated to the vendor certificate"
+  },
+  "android_repository_metadata": "https://dl.google.com/android/repository/repository2-1.xml",
+  "dependencies": [
+    {
+      "name": "Android SDK Build-Tools",
+      "version": "36.0.0",
+      "platform": "linux",
+      "source": "https://dl.google.com/android/repository/build-tools_r36_linux.zip",
+      "size_bytes": 63737259,
+      "published_sha1": "b0b6376977657e8ad9b969bacf4093601da2c6fb",
+      "downloaded_sha256": "5d9ac77fb6ff43d9da518a337b4fcf8f9097113df531d99ccefe80ef7ce8250b",
+      "published_digest_verified": true,
+      "extracted_directory": "../toolchain/build-tools-36/android-16",
+      "observed_tools": {
+        "aapt2": "2.20-13193326",
+        "d8": "8.10.9-dev, a7ad18a70460b799d0482e497c109a75bf7f91de",
+        "apksigner": "0.9"
+      }
+    },
+    {
+      "name": "Android SDK Platform",
+      "version": "36 revision 2",
+      "source": "https://dl.google.com/android/repository/platform-36_r02.zip",
+      "size_bytes": 65878410,
+      "published_sha1": "2c1a80dd4d9f7d0e6dd336ec603d9b5c55a6f576",
+      "downloaded_sha256": "37607369a28c5b640b3a7998868d45898ebcb777565a0e85f9acf36f29631d2e",
+      "published_digest_verified": true,
+      "android_jar": "../toolchain/platform-36/android-36/android.jar"
+    },
+    {
+      "name": "JADX",
+      "role": "Static analysis only; not packaged into the standalone app",
+      "version": "1.5.6",
+      "release_page": "https://github.com/skylot/jadx/releases/tag/v1.5.6",
+      "release_published_at": "2026-07-10T19:07:35Z",
+      "source": "https://github.com/skylot/jadx/releases/download/v1.5.6/jadx-1.5.6.zip",
+      "size_bytes": 72646741,
+      "published_sha256": "545ea2be9c242511bc145755cf4bda2485ade42966e096f8b4d3da2a230e8974",
+      "downloaded_sha256": "545ea2be9c242511bc145755cf4bda2485ade42966e096f8b4d3da2a230e8974",
+      "published_digest_verified": true
+    }
+  ],
+  "java_environment": {
+    "origin": "Preinstalled runtime",
+    "observed_version": "OpenJDK 21.0.13, build 21.0.13+9-1-deb13u2-Debian",
+    "compiler_entrypoint": "java com.sun.tools.javac.Main",
+    "jar_entrypoint": "java --module jdk.jartool/sun.tools.jar.Main"
+  },
+  "official_android_documentation": [
+    "https://developer.android.com/build/building-cmdline",
+    "https://developer.android.com/develop/connectivity/bluetooth/bt-permissions",
+    "https://developer.android.com/develop/connectivity/bluetooth/ble/find-ble-devices",
+    "https://developer.android.com/develop/connectivity/bluetooth/ble/connect-gatt-server",
+    "https://developer.android.com/reference/android/bluetooth/BluetoothGatt"
+  ],
+  "verification_scope": "Tool downloads match publisher metadata and tool version commands ran successfully. A built APK must be separately compiled and signature-verified. Physical watch interoperability is not established by these tool checks."
+}
